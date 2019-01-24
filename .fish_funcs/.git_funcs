@@ -1,0 +1,43 @@
+#!/usr/local/bin/fish
+
+
+function is-git-repo -d 'Returns 0 status code if .git dir exists'
+    test -e .git
+end 
+
+
+function get-git-branch -d 'Returns current git branch name'
+    git branch | grep \* | cut -d ' ' -f2
+end
+
+
+function git-delete-merged -d 'Update master and delete merged branch'
+    if is-git-repo
+        set branch get-git-branch 
+        if [ $branch != "master" ]
+            git checkout master && git pull && git branch -D $branch
+            git fetch --prune
+        end 
+    else
+        echo "Not a git repo."
+    end
+end
+
+
+function git-push-upstream -d 'Push branch to origin upstream with same name'
+    if is-git-repo
+        set branch get-git-branch
+    else
+        echo "Not a git repo."
+    end
+end
+
+
+function git-new-branch -d 'Shorthand git checkout -b branchname'
+    if is-git-repo
+        git checkout -b $argv
+    else
+        echo "Not a git repo." 
+    end 
+end 
+

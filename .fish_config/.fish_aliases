@@ -1,0 +1,10 @@
+alias fupdate ". /Users/will/scripts/fupdate"
+alias ll "ls -alhpF"
+alias activate "source env/bin/activate.fish"
+alias olympus "cd ~/code/olympus && activate"
+alias oly "olympus"
+
+# Git
+alias gdm "git-delete-merged"
+alias gpu "git-push-upstream"
+alias gnb "git-new-branch"

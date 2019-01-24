@@ -1,0 +1,9 @@
+# Environment variables
+set --export SPACEFISH_DOCKER_SHOW false
+set --export SPACEFISH_PYENV_COLOR green
+set --export PIPENV_VENV_IN_PROJECT true
+set --export VIRTUAL_ENV_DISABLE_PROMPT true
+set --export SECRETS_FILE_PATH ~/secrets
+set --export CLOUDSDK_PYTHON "$HOME"/.pyenv/versions/2.7.15/bin/python
+set --export NVM_DIR "$HOME"/.nvm
+set --export GROOVY_HOME /usr/local/opt/groovy/libexec

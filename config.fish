@@ -2,10 +2,14 @@
 eval 'pyenv init -' > /dev/null
 
 # Source custom fish functions
-source ~/.fish_funcs/.*
+for file in ~/.fish/.fish_funcs/.*
+    source $file
+end
 
 # Source other fish configuration
-source ~/.fish_config/.*
+for file in ~/.fish/.fish_config/.*
+    source $file
+end
 
 # Update PATH for gcloud SDK
 bass source '/Applications/google-cloud-sdk/path.bash.inc'

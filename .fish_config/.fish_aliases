@@ -8,3 +8,7 @@ alias oly "olympus"
 alias gdm "git-delete-merged"
 alias gpu "git-push-upstream"
 alias gnb "git-new-branch"
+
+# GCloud
+alias gssh "gcloud compute ssh"
+alias gact "gcloud config configurations activate"

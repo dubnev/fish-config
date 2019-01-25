@@ -23,6 +23,13 @@ function git-delete-merged -d 'Update master and delete merged branch'
     end
 end
 
+function git-push -d 'Shorthand git push'
+    if is-git-repo
+        git push
+    else
+        echo "Not a git repo."
+    end
+end
 
 function git-push-upstream -d 'Push branch to origin upstream with same name'
     if is-git-repo

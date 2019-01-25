@@ -6,6 +6,7 @@ alias oly "olympus"
 
 # Git
 alias gdm "git-delete-merged"
+alias gp "git-push"
 alias gpu "git-push-upstream"
 alias gnb "git-new-branch"
 

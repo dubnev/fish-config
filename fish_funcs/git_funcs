@@ -13,7 +13,7 @@ end
 
 function git-delete-merged -d 'Update master and delete merged branch'
     if is-git-repo
-        set branch get-git-branch 
+        set branch (get-git-branch) 
         if [ $branch != "master" ]
             git checkout master && git pull && git branch -D $branch
             git fetch --prune
@@ -26,7 +26,8 @@ end
 
 function git-push-upstream -d 'Push branch to origin upstream with same name'
     if is-git-repo
-        set branch get-git-branch
+        set branch (get-git-branch)
+        git push --set-upstream origin $branch
     else
         echo "Not a git repo."
     end

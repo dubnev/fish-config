@@ -1,3 +1,6 @@
+# Suppress intro fish message
+set fish_greeting
+
 # Initialize pyenv, suppress output
 eval 'pyenv init -' > /dev/null
 

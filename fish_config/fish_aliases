@@ -13,3 +13,7 @@ alias gnb "git-new-branch"
 # GCloud
 alias gssh "gcloud compute ssh"
 alias gact "gcloud config configurations activate"
+
+# Tmux
+alias tas "tmux-attach-session"
+

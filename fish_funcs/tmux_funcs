@@ -1,0 +1,3 @@
+function tmux-attach-session -d 'Shorthand to attach session by name'
+    tmux a -t $argv
+end

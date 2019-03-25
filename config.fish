@@ -2,7 +2,10 @@
 set fish_greeting
 
 # Initialize pyenv, suppress output
-eval 'pyenv init -' > /dev/null
+pyenv init - | source
+
+# Re-add all SSH keys in case they got dropped
+eval 'ssh-add -A' > /dev/null 2>&1
 
 # Source custom fish functions
 for file in ~/.fish/fish_funcs/*

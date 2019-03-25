@@ -7,36 +7,40 @@ end
 
 
 function get-git-branch -d 'Returns current git branch name'
-    git branch | grep \* | cut -d ' ' -f2
+    if is-git-repo
+        git branch | grep \* | cut -d ' ' -f2
+    end
 end
 
 
 function git-delete-merged -d 'Update master and delete merged branch'
     if is-git-repo
         set branch (get-git-branch) 
-        if [ $branch != "master" ]
+        if [ $branch != 'master' ]
             git checkout master && git pull && git branch -D $branch
             git fetch --prune
         end 
     else
-        echo "Not a git repo."
+        echo 'Not a git repo.'
     end
 end
+
 
 function git-push -d 'Shorthand git push'
     if is-git-repo
         git push
     else
-        echo "Not a git repo."
+        echo 'Not a git repo.'
     end
 end
+
 
 function git-push-upstream -d 'Push branch to origin upstream with same name'
     if is-git-repo
         set branch (get-git-branch)
         git push --set-upstream origin $branch
     else
-        echo "Not a git repo."
+        echo 'Not a git repo.'
     end
 end
 
@@ -45,7 +49,19 @@ function git-new-branch -d 'Shorthand git checkout -b branchname'
     if is-git-repo
         git checkout -b $argv
     else
-        echo "Not a git repo." 
+        echo 'Not a git repo.' 
     end 
 end 
 
+function git-rebase-master -d 'Rebase latest version of master onto branch'
+    if is-git-repo
+        set branch (get-git-branch)
+        if [ $branch != 'master' ]
+            git checkout master && git pull && git checkout $branch && git rebase master
+        else
+            echo 'Cannot perform this operation on master.'
+        end
+    else
+        echo 'Not a git repo.'
+    end
+end

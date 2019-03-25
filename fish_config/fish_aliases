@@ -9,6 +9,7 @@ alias gdm "git-delete-merged"
 alias gp "git-push"
 alias gpu "git-push-upstream"
 alias gnb "git-new-branch"
+alias grm "git-rebase-master"
 
 # GCloud
 alias gssh "gcloud compute ssh"
@@ -17,3 +18,6 @@ alias gact "gcloud config configurations activate"
 # Tmux
 alias tas "tmux-attach-session"
 
+# Python related
+alias alerev "alembic revision --autogen -m"
+alias ftf "fab-test-file"

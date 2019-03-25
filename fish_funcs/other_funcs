@@ -1,0 +1,6 @@
+#!/usr/local/bin/fish
+
+function fab-test-file  -d 'Shortcut for fab test file'
+    fab test_file:$argv
+    flake8
+end

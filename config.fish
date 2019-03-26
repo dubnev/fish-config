@@ -18,7 +18,8 @@ for file in ~/.fish/fish_config/*
 end
 
 # Update PATH for gcloud SDK
-bass source '/Applications/google-cloud-sdk/path.bash.inc'
+# bass source '/Applications/google-cloud-sdk/path.bash.inc'
+set --export PATH $PATH /Applications/google-cloud-sdk/bin
 
 # Shell command completion for gcloud cli
 bass source '/Applications/google-cloud-sdk/completion.bash.inc'

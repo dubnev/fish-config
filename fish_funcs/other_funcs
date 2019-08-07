@@ -4,3 +4,11 @@ function fab-test-file  -d 'Shortcut for fab test file'
     fab test_file:$argv
     flake8
 end
+
+function arcadia-run -d 'Pass through to run args in arcadia venv, return to previous dir'
+    pushd $ARCADIA_DIR
+    git checkout master > /dev/null 2>&1
+    git pull > /dev/null 2>&1
+    pipenv run -- fab $argv
+    popd
+end

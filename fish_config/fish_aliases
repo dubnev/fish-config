@@ -10,6 +10,7 @@ alias gp "git-push"
 alias gpu "git-push-upstream"
 alias gnb "git-new-branch"
 alias grm "git-rebase-master"
+alias gmm "git-merge-master"
 
 # GCloud
 alias gssh "gcloud compute ssh"
@@ -21,3 +22,6 @@ alias tas "tmux-attach-session"
 # Python related
 alias alerev "alembic revision --autogen -m"
 alias ftf "fab-test-file"
+
+# Arcadia
+alias arc "arcadia-run"

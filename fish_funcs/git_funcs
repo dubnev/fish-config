@@ -65,3 +65,17 @@ function git-rebase-master -d 'Rebase latest version of master onto branch'
         echo 'Not a git repo.'
     end
 end
+
+function git-merge-master -d 'Merge lastet version of master onto branch'
+    if is-git-repo
+        set branch (get-git-branch)
+	if [ $branch != 'master' ]
+	    git checkout master && git pull && git checkout $branch && git merge master
+	else
+	    echo 'Cannot perform this operation on master.'
+	end
+    else
+	echo 'Not a git repo.'
+    end
+end
+

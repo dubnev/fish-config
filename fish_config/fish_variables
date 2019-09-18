@@ -6,5 +6,5 @@ set --export SECRETS_FILE_PATH ~/secrets
 set --export CLOUDSDK_PYTHON "$HOME"/.pyenv/versions/2.7.15/bin/python
 set --export NVM_DIR "$HOME"/.nvm
 set --export ARCADIA_DIR "$HOME"/code/arcadia
+set --export GECK_DIR "$HOME"/code/geck
 set --export PIPENV_IGNORE_VIRTUALENVS 1
-

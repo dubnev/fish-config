@@ -1,8 +1,11 @@
 alias fupdate ". /Users/will/scripts/fupdate"
 alias ll "ls -alhpF"
 alias activate "source env/bin/activate.fish"
-alias olympus "cd ~/code/olympus && activate"
+alias olympus "cd ~/code/olympus && activate && set -gx PYTHONPATH $PWD"
 alias oly "olympus"
+alias arcadia "cd ~/code/arcadia && source .venv/bin/activate.fish"
+alias geck "cd ~/code/geck && source .venv/bin/activate.fish"
+
 
 # Git
 alias gdm "git-delete-merged"
@@ -20,7 +23,8 @@ alias gact "gcloud config configurations activate"
 alias tas "tmux-attach-session"
 
 # Python related
-alias alerev "alembic revision --autogen -m"
+alias alerev "fab dev generate_migration:"
+alias ft "fab test"
 alias ftf "fab-test-file"
 
 # Arcadia

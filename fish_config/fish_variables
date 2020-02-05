@@ -8,3 +8,4 @@ set --export NVM_DIR "$HOME"/.nvm
 set --export ARCADIA_DIR "$HOME"/code/arcadia
 set --export GECK_DIR "$HOME"/code/geck
 set --export PIPENV_IGNORE_VIRTUALENVS 1
+set --export PIPENV_DEFAULT_PYTHON_VERSION $PYENV_ROOT/shims/python

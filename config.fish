@@ -2,7 +2,7 @@
 set fish_greeting
 
 # Initialize pyenv, suppress output
-pyenv init - | source
+pyenv init - --no-rehash | source
 
 # Re-add all SSH keys in case they got dropped
 eval 'ssh-add -A' > /dev/null 2>&1
@@ -16,6 +16,10 @@ end
 for file in ~/.fish/fish_config/*
     source $file
 end
+
+# Update limit for max open file descriptors
+ulimit -n 200000
+ulimit -u 2048
 
 # Update PATH for gcloud SDK
 # bass source '/Applications/google-cloud-sdk/path.bash.inc'

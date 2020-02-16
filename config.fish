@@ -20,11 +20,3 @@ end
 # Update limit for max open file descriptors
 ulimit -n 200000
 ulimit -u 2048
-
-# Update PATH for gcloud SDK
-# bass source '/Applications/google-cloud-sdk/path.bash.inc'
-set --export PATH $PATH /Applications/google-cloud-sdk/bin
-
-# Shell command completion for gcloud cli
-bass source '/Applications/google-cloud-sdk/completion.bash.inc'
-
